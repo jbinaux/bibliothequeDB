@@ -18,7 +18,8 @@
 		//creation d un statement 
 		st = cn.createStatement();
 		String search = request.getParameter("search");
-		String sql = "SELECT * FROM bibliotheque_db_2.livres WHERE titre LIKE '%" + search + "%' OR auteur LIKE '%" + search + "%'";
+		String sql = "SELECT * FROM bibliotheque_db_2.livres WHERE titre LIKE '%" + search
+				+ "%' OR auteur LIKE '%" + search + "%'";
 		//execution requete 
 		ResultSet result = st.executeQuery(sql);
 		String titre;
@@ -31,9 +32,9 @@
 
 			out.print(titre + " de " + auteur + "<br />");
 		}
-		%>
-		<jsp:include page="footer.html"></jsp:include>
-		<%
+%>
+<jsp:include page="footer.html"></jsp:include>
+<%
 	} catch (SQLException e) {
 		e.printStackTrace();
 	} catch (ClassNotFoundException e) {
